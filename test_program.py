@@ -1,6 +1,6 @@
-from mconsole import MConsole
-
 import curses
+
+from mconsole import MConsole
 
 
 def main(stdscr):
@@ -20,12 +20,12 @@ def main(stdscr):
         choice = False
         while choice is False:
             stdscr.clear()
-            choice = mc.menu_input(stdscr, main_menu, "Main Menu")
+            choice = mc.menu_input(stdscr, main_menu, 'Main Menu')
             # print_center(stdscr, "You selected '{}'".format(choice))
 
         if choice.lower() == 'exit':
             stdscr.clear()
-            yesno = mc.menu_input(stdscr, yesno_menu, "Are you sure?")
+            yesno = mc.menu_input(stdscr, yesno_menu, 'Are you sure?')
             if yesno.lower() == 'yes':
                 return
             else:

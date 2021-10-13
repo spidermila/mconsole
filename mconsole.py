@@ -19,41 +19,42 @@ class MConsole:
     def size_refresh(self, stdscr):
         self.log(
             'screen refreshed, original size: ' +
-            str(self._x_max) + " x " +
-            str(self._y_max) + " - array size " +
-            str(len(self._screen[0])) + " x " + str(len(self._screen))
+            str(self._x_max) + ' x ' +
+            str(self._y_max) + ' - array size ' +
+            str(len(self._screen[0])) + ' x ' + str(len(self._screen)),
         )
         self._y_max, self._x_max = stdscr.getmaxyx()
 
         # if rows were removed:
         if self._y_max < len(self._screen):
             for y in range(self._y_max, len(self._screen)):
-                self.log("removing row: " + str(self._y_max))
+                self.log('removing row: ' + str(self._y_max))
                 self._screen.pop(self._y_max)
 
         for y in range(self._y_max):
             if y > len(self._screen) - 1:  # if rows were added:
-                self.log("adding row y: " + str(y))
+                self.log('adding row y: ' + str(y))
                 self._screen.append([])
             if len(self._screen[y]) > self._x_max:  # if a column was removed:
                 for x in range(self._x_max, len(self._screen[y])):
                     self.log(
-                        "removing column: " +
-                        str(y) + " x " + str(self._x_max)
+                        'removing column: ' +
+                        str(y) + ' x ' + str(self._x_max),
                     )
                     self._screen[y].pop(self._x_max)
             else:
                 for x in range(self._x_max):
                     if x > len(self._screen[y]) - 1:  # if a column was added
-                        self.log("adding column: " + str(y))
+                        self.log('adding column: ' + str(y))
                         self._screen[y].append(ScreenSettings.blank_character)
 
         self.log(
-            "screen refreshed, new size: " +
-            str(self._x_max) + " x " +
-            str(self._y_max) + " - array size " +
+            'screen refreshed, new size: ' +
+            str(self._x_max) + ' x ' +
+            str(self._y_max) + ' - array size ' +
             str(len(self._screen[0])) +
-            " x " + str(len(self._screen)))
+            ' x ' + str(len(self._screen)),
+        )
 
     def clear(self, stdscr):
         stdscr.clear()
@@ -129,8 +130,8 @@ class MConsole:
 
     def log(self, message):
         if ScreenSettings.verbose == 1:
-            f = open("cursetest.log", "a")
-            f.write(str(message) + "\n")
+            f = open('cursetest.log', 'a')
+            f.write(str(message) + '\n')
             f.close()
         else:
             pass
@@ -148,7 +149,7 @@ class Window:
     def add_member(self, type, *args):
         self._members.append(locals()[type](*args))
 
-    def center_member(self, ):
+    def center_member(self):
         pass
 
 
