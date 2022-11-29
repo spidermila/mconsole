@@ -26,9 +26,7 @@ repos:
     rev: v0.991
     hooks:
     -   id: mypy
-        additional_dependencies: [types-PyYAML==5.4.10]
 -   repo: https://github.com/PyCQA/flake8
     rev: 6.0.0
     hooks:
     -   id: flake8
-        additional_dependencies: [flake8-typing-imports==1.14.0]
