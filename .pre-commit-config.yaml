@@ -9,7 +9,7 @@ repos:
     -   id: debug-statements
     -   id: double-quote-string-fixer
 -   repo: https://github.com/asottile/reorder-python-imports
-    rev: v3.13.0
+    rev: v3.14.0
     hooks:
     -   id: reorder-python-imports
         args: [--py3-plus]
@@ -19,11 +19,11 @@ repos:
     -   id: add-trailing-comma
         args: [--py36-plus]
 -   repo: https://github.com/asottile/pyupgrade
-    rev: v3.17.0
+    rev: v3.19.0
     hooks:
     -   id: pyupgrade
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.11.2
+    rev: v1.13.0
     hooks:
     -   id: mypy
 -   repo: https://github.com/PyCQA/flake8
